@@ -5,3 +5,27 @@
 body {
     background-color: #e0e2de;
 }
+
+.navigation-title {
+    display: block;
+}
+.nav-link {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-me {
+    display: block;
+}
+
+#phone, #email, #github, #linkedin {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 760px) {
+    header, main, footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
