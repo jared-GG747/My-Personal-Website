@@ -4,80 +4,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jared's Portfolio</title>
   <link rel="stylesheet" href="./assets/reset.css/">
   <link rel="stylesheet" href="./assets/style.css">
+  <title>Jared's Portfolio</title>
 </head>
 
 <body> 
-    <header>
-        <section class="navigation-title">
-            <h1>Jared Gibson</h1>
-        
-        <nav>
-            <ul>
-                <li class="nav-link">
-                    <a href=#About-Me>About Me</a>
-                </li>
-                <li class="nav-link">
-                    <a href=#Works>Works</a>
-                </li>
-                <li class="nav-link">
-                    <a href=#Contact-Me>Contact Me</a>
-                </li>
-                <li class="nav-link">
-                    <a href=#Resume>Resume</a>
-                </li>
-            </ul>
-        </section>
-        </nav>
-    </header>
+    <section id="header">
+        <div class="container">
+            <nav>
+                <img src="./assets/JG-monogram.jpeg" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Jared Gibson</h1>
+                <p>Welcome to my <span>Portfolio</span></p>
+            </div>
+        </div>
+    </section>
 
-    <main>
-        <section class="about-me" id="about-me"> 
-            <h2>About Me</h2>
-            <div class="about-me-description">
-                <p>
-                    I am a young future-oriented developer.
-                </p>
-            </div>
-        </section>
-
-        <section class="works" id="works">
-            <h2>Works</h2>
-            <div class="project-one">
-                    Project 1
-            </div>
-            <div class="project-two">
-                    Project 2
-            </div>
-            <div class="project-three">
-                    Project 3
-            </div>
-            <div class="project-four">
-                    Project 4
-            </div>
-            <div class="project-five">
-                    Project 5
-            </div>
-        </section>
-    </main>
+    <!--About Me-->
     
-    <footer> 
-        <section class="contact-me">
-            <h2>Contact Me</h2>
-            <div id="phone">
-                (281) 707-5371
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./assets/grad-selfie.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>This is a paragraph about me.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Full Stack</span><br>Full understanding of front-end and back-end development.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2023</span><br>Currently looking for my first professional job.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022</span><br>Univeristy of Texas at Austin Full Flex Coding Bootcamp.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div id="email">
-                jdgib18@gmail.com
-            </div>
-            <div id="github">
-                <a href="https://github.com/jared-GG747">Github</a>
-            </div>
-            <div id="linkedin">
-                <a href="www.linkedin.com/in/jared-gibson-747abc">LinkedIn</a>
-            </div>
-        </section>
-    </footer>
+        </div>
+    </section>
+
+    <!--My Work-->
+
+    <section id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+        </div>
+
+    </section>
+    <script> 
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 </body>
